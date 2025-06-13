@@ -175,11 +175,11 @@ const actions = [
 function getRandomAction() {
     const actionDisplay = document.getElementById("actionDisplay");
     const randomIndex = Math.floor(Math.random() * actions.length);
-    const actionText = actions[randomIndex];
-    actionDisplay.style.opacity = 0;
 
+    actionDisplay.classList.remove("show");
     setTimeout(() => {
-        actionDisplay.innerText = actionText;
-        actionDisplay.style.opacity = 1;
-    }, 150);
+        actionDisplay.innerText = actions[randomIndex];
+        actionDisplay.classList.add("show");
+    }, 100);
+
 }
