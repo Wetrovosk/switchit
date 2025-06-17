@@ -16,7 +16,7 @@ const actions = [
     "Скажи себе: «Я достоин лучшего, чем дым и запах пепла»",
     "Съешь что-то вкусное и скажи себе: «Это тоже можно»",
     "Представь, что каждое твоё действие записывается — будь героем!",
-    "Спроси себя: «А зачем мне это нужно?»",
+    "Спроси себя: «А зачем мне это нужно было?»",
     "Представь, что ты — мудрец, отказавшийся от вредной привычки",
     "Попробуй представить, как ты через год смеёшься над этой ситуацией",
     "Поговори с собой, как с другом — иногда тебе этого не хватает",
@@ -183,3 +183,27 @@ function getRandomAction() {
     }, 100);
 
 }
+
+// === Темизация ===
+function toggleTheme() {
+    const body = document.getElementById('body');
+    const isDark = body.getAttribute('data-theme') === 'dark';
+
+    if (isDark) {
+        body.removeAttribute('data-theme');
+        localStorage.removeItem('theme');
+    } else {
+        body.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+    }
+}
+
+// === Загрузка сохранённой темы ===
+(function loadTheme() {
+    const savedTheme = localStorage.getItem('theme');
+    const body = document.getElementById('body');
+
+    if (savedTheme === 'dark') {
+        body.setAttribute('data-theme', 'dark');
+    }
+})();
