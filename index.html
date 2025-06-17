@@ -3,17 +3,19 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Switchit</title>
+    <title>💡 Switchit</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <link rel="manifest" href="manifest.json" />
 </head>
-<body>
+<body class="light-theme" id="body">
 
 <div class="container">
-    <h1>Switchit</h1>
-    <p>Получи задание вместо сигареты</p>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+
+    <h1>💡 Switchit</h1>
+    <p>Получи занятие вместо сигареты</p>
 
     <button onclick="getRandomAction()" class="action-button">💡 Получить задание</button>
     <p id="actionDisplay" class="action-display"></p>
